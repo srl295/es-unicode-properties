@@ -9,7 +9,7 @@ for a code point.
 
 For applications, they can directly answer questions such as “What kind of script is 𞤘?”, “Is ġ lowercase? ”, or “What is the numeric value of ५?”.
 
-For feature implementers, this is a building block for implementing a wide array of higher level features, such as [number parsing](https://github.com/tc39/ecma402/issues/1), [segmentation](https://github.com/tc39/proposal-intl-segmenter), regular expressions, and much more.
+For feature implementers, this is a required building block for implementing a wide array of higher level features, such as [number parsing](https://github.com/tc39/ecma402/issues/1), [segmentation](https://github.com/tc39/proposal-intl-segmenter), regular expressions, and much more.
 
 ## Definitions
 
@@ -103,7 +103,7 @@ else if(/\p{Sentence_Break=STerm}/u  .test('q')) { … } // false
 ```
 _(this property was not actually supported by the JS engine I tested.)_
 
-For performance reasons, an application may actually want to get the properties of every codepoint in a string. 
+(For performance reasons, an application may actually want to get the properties of _each_  codepoint in a string, and not need to make multiple calls.  See the issues for discussion.)
 
 ## History 
 
